@@ -625,7 +625,7 @@
 		84358FF31DD1FEB600811FC7 /* rtmp_sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp_sys.h; sourceTree = "<group>"; };
 		8495F66B1DB8F14600542124 /* LFLiveKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LFLiveKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8495F66D1DB8F14600542124 /* LFLiveKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLiveKit.h; sourceTree = "<group>"; };
-		8495F66E1DB8F14600542124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8495F66E1DB8F14600542124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = LFLiveKit/Info.plist; sourceTree = SOURCE_ROOT; };
 		84D8B4BE1D757EB800752B56 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		84D8B4C01D757EBE00752B56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84D8B4C21D757EC400752B56 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -693,6 +693,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8428DD741E6ECBED003E35B4 /* System Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D8B4CA1D757ED600752B56 /* libz.tbd */,
+				84D8B4C81D757ED100752B56 /* libstdc++.tbd */,
+				84D8B4C61D757ECC00752B56 /* UIKit.framework */,
+				84D8B4C41D757EC800752B56 /* Foundation.framework */,
+				84D8B4C21D757EC400752B56 /* AVFoundation.framework */,
+				84D8B4C01D757EBE00752B56 /* AudioToolbox.framework */,
+				84D8B4BE1D757EB800752B56 /* VideoToolbox.framework */,
+			);
+			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
 		84358E851DD1FEB500811FC7 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,28 +1108,12 @@
 			path = "pili-librtmp";
 			sourceTree = "<group>";
 		};
-		8495F66C1DB8F14600542124 /* LFLiveKitFramework */ = {
-			isa = PBXGroup;
-			children = (
-				8495F66E1DB8F14600542124 /* Info.plist */,
-			);
-			path = LFLiveKitFramework;
-			sourceTree = "<group>";
-		};
 		84D8B3861D7574D600752B56 = {
 			isa = PBXGroup;
 			children = (
 				84D8B5831D768B6E00752B56 /* LFLiveKit */,
-				84D8B4CA1D757ED600752B56 /* libz.tbd */,
-				84D8B4C81D757ED100752B56 /* libstdc++.tbd */,
-				84D8B4C61D757ECC00752B56 /* UIKit.framework */,
-				84D8B4C41D757EC800752B56 /* Foundation.framework */,
-				84D8B4C21D757EC400752B56 /* AVFoundation.framework */,
-				84D8B4C01D757EBE00752B56 /* AudioToolbox.framework */,
-				84D8B4BE1D757EB800752B56 /* VideoToolbox.framework */,
-				8495F66C1DB8F14600542124 /* LFLiveKitFramework */,
+				8428DD741E6ECBED003E35B4 /* System Frameworks */,
 				84D8B3911D7574D600752B56 /* Products */,
-				9ABACAFFC334034AA0115426 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1137,12 +1135,12 @@
 				8495F66D1DB8F14600542124 /* LFLiveKit.h */,
 				84D8B5A61D768B6E00752B56 /* LFLiveSession.h */,
 				84D8B5A71D768B6E00752B56 /* LFLiveSession.m */,
+				8495F66E1DB8F14600542124 /* Info.plist */,
 				84D8B5A81D768B6E00752B56 /* objects */,
 				84D8B5B31D768B6E00752B56 /* publish */,
 				84358E851DD1FEB500811FC7 /* Vendor */,
 			);
-			name = LFLiveKit;
-			path = ../LFLiveKit;
+			path = LFLiveKit;
 			sourceTree = "<group>";
 		};
 		84D8B5841D768B6E00752B56 /* capture */ = {
@@ -1238,13 +1236,6 @@
 				84D8B5BA1D768B6E00752B56 /* NSMutableArray+LFAdd.m */,
 			);
 			path = publish;
-			sourceTree = "<group>";
-		};
-		9ABACAFFC334034AA0115426 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1615,7 +1606,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = LFLiveKitFramework/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LFLiveKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1641,7 +1632,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = LFLiveKitFramework/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LFLiveKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

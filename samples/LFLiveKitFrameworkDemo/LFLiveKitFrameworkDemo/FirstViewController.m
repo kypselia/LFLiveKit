@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-#import <LFLiveKit/LFLiveKitFramework.h>
+#import <LFLiveKit/LFLiveKit.h>
 
 @interface FirstViewController ()
 
